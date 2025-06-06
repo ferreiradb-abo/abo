@@ -58,28 +58,33 @@
       margin-bottom: 40px;
     }
 
-    .language-toggle {
-      position: absolute;
+    .footer-note {
+      position: relative;
+      z-index: 2;
+      font-size: 0.9rem;
+      color: #d0d0d0;
+    }
+
+    nav {
+      position: fixed;
       top: 20px;
       right: 30px;
       z-index: 3;
     }
 
-    .language-toggle button {
-      background: transparent;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      cursor: pointer;
+    nav a {
+      color: white;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 4px;
       font-size: 0.9rem;
     }
 
-    footer {
+    section#contactos {
       background-color: #000d1a;
-      padding: 30px 20px;
+      padding: 60px 20px;
       text-align: center;
-      font-size: 0.8rem;
       color: #b0bccc;
       line-height: 1.6;
     }
@@ -93,47 +98,38 @@
         font-size: 1.1rem;
       }
 
-      .language-toggle button {
+      nav a {
         font-size: 0.8rem;
       }
 
-      footer {
-        font-size: 0.7rem;
+      .footer-note {
+        font-size: 0.75rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="language-toggle">
-    <button onclick="toggleLanguage()">PT / EN</button>
-  </div>
+  <nav>
+    <a href="#contactos">Contactos</a>
+  </nav>
 
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1 id="headline">A VISION IS TAKING FORM</h1>
-      <p class="tagline" id="tagline">
+      <h1>A VISION IS TAKING FORM</h1>
+      <p class="tagline">
         A new financial institution is being carefully shaped — guided by clarity, purpose, and long-term ambition.
       </p>
+      <div class="footer-note">
+        ©️ 2025 AFRICAN BANK OF OMAN, S.A. — Incorporated under the laws of the Republic of Angola
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div id="footerText">
-      ©️ 2025 AFRICAN BANK OF OMAN, S.A. — Incorporated under the laws of the Republic of Angola, registered with the Commercial Registry of Luanda under number 2025-507, with taxpayer identification number 5002466260 and registered office at Rua Manuel Fernandes Caldeira, Edifício Torre X, nº 5, 9-D, Luanda, Angola.
-    </div>
-  </footer>
+  <section id="contactos">
+    ©️ 2025 AFRICAN BANK OF OMAN, S.A. — Incorporated under the laws of the Republic of Angola, registered with the Commercial Registry of Luanda under number 2025-507, with taxpayer identification number 5002466260 and registered office at Rua Manuel Fernandes Caldeira, Edifício Torre X, nº 5, 9-D, Luanda, Angola.
+  </section>
 
-  <script>
-    let currentLang = 'en';
-    function toggleLanguage() {
-      const headline = document.getElementById('headline');
-      const tagline = document.getElementById('tagline');
-      const footer = document.getElementById('footerText');
-
-      if (currentLang === 'en') {
-        headline.innerText = 'UMA VISÃO ESTÁ A TOMAR FORMA';
-        tagline.innerText = 'Uma nova instituição financeira está a ser cuidadosamente moldada — guiada por clareza, propósito e ambição de longo prazo.';
-        footer.innerText = '©️ 2025 AFRICAN BANK OF OMAN, S.A. — Constituída ao abrigo das leis da República de Angola, registada na Conservatória do Registo Comercial de Luanda sob o número 2025-507, com NIF 5002466260 e sede na Rua Manuel Fern
-
+</body>
+</html>
