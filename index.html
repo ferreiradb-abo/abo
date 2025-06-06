@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,10 +87,23 @@
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       box-shadow: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
     }
     .about-text.visible {
       display: block;
       opacity: 1;
+    }
+    .about-text span[data-num] {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      color: inherit !important;
+      letter-spacing: normal !important;
+      unicode-bidi: normal !important;
+      direction: inherit !important;
+      /* Previne highlight especial nos spans */
+      background: none !important;
     }
     .about-button {
       margin-top: 0;
@@ -133,12 +145,6 @@
       .about-button { font-size: 0.95rem; }
       .bottom-content { bottom: 12px; }
     }
-    /* Garante que os números não são reconhecidos como telefone */
-    .about-text span[data-num] {
-      letter-spacing: 0.09em;
-      unicode-bidi: bidi-override;
-      direction: ltr;
-    }
   </style>
   <script>
     function showFooter() {
@@ -170,12 +176,13 @@
       <button class="about-button" onclick="showFooter()">About us</button>
       <div class="footer-note">©️ 2025 AFRICAN BANK OF OMAN, S.A.</div>
       <div class="about-text">
-        Incorporated under the laws of the Republic of Angola, registered with the Commercial Registry of Luanda under number <span data-num>2025&#8202;-&#8202;507</span>, with taxpayer identification number <span data-num>5002&#8202;466&#8202;260</span> and registered office at Rua Manuel Fernandes Caldeira, Edifício Torre X, n.º <span data-num>5</span>, <span data-num>9-D</span>, Luanda, Angola.
+        Incorporated under the laws of the Republic of Angola, registered with the Commercial Registry of Luanda under number <span data-num>2025-507</span>, with taxpayer identification number <span data-num>5002466260</span> and registered office at Rua Manuel Fernandes Caldeira, Edifício Torre X, n.º <span data-num>5</span>, <span data-num>9-D</span>, Luanda, Angola.
       </div>
     </div>
   </section>
 </body>
 </html>
+
 
 
 
