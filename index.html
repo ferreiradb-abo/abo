@@ -55,14 +55,12 @@
       font-size: 3rem;
       margin-bottom: 20px;
       font-weight: 700;
-      animation: fadeInDown 1s ease-out;
     }
 
     p.tagline {
       font-size: 1.4rem;
       line-height: 1.6;
       margin-bottom: 40px;
-      animation: fadeInUp 1.2s ease-out;
     }
 
     .footer-note {
@@ -72,7 +70,6 @@
       color: #d0d0d0;
       min-height: 2em;
       margin-bottom: 20px;
-      animation: fadeIn 1.4s ease-out;
     }
 
     .about-text {
@@ -80,46 +77,22 @@
       font-size: 0.9rem;
       color: #d0d0d0;
       margin-top: 10px;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .about-text.visible {
-      display: block;
-      opacity: 1;
     }
 
     .about-button {
       margin-top: 10px;
       padding: 12px 24px;
       font-size: 1rem;
-      background-color: #3399cc;
+      background-color: rgba(255, 255, 255, 0.15);
       border: none;
       border-radius: 5px;
       color: white;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      animation: fadeIn 1.6s ease-out;
+      transition: background 0.3s ease;
     }
 
     .about-button:hover {
-      background-color: #287ba5;
-      transform: scale(1.05);
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      background-color: rgba(255, 255, 255, 0.3);
     }
 
     @media (max-width: 768px) {
@@ -144,14 +117,11 @@
     function showFooter() {
       const aboutText = document.querySelector('.about-text');
       const button = document.querySelector('.about-button');
-      aboutText.classList.add('visible');
+      aboutText.style.display = 'block';
       button.style.display = 'none';
       setTimeout(() => {
-        aboutText.classList.remove('visible');
-        setTimeout(() => {
-          aboutText.style.display = 'none';
-          button.style.display = 'inline-block';
-        }, 500);
+        aboutText.style.display = 'none';
+        button.style.display = 'inline-block';
       }, 5000);
     }
   </script>
@@ -165,7 +135,7 @@
         A new financial institution is being carefully shaped — guided by clarity, purpose, and long-term ambition.
       </p>
       <div class="footer-note">©️ 2025 AFRICAN BANK OF OMAN, S.A.</div>
-      <button class="about-button" onclick="showFooter()">Institutional Details</button>
+      <button class="about-button" onclick="showFooter()">About us</button>
       <div class="about-text">
         Incorporated under the laws of the Republic of Angola, registered with the Commercial Registry of Luanda under number 2025-507, with taxpayer identification number 5002466260 and registered office at Rua Manuel Fernandes Caldeira, Edifício Torre X, n.º 5, 9-D, Luanda, Angola.
       </div>
@@ -173,4 +143,3 @@
   </section>
 </body>
 </html>
-
