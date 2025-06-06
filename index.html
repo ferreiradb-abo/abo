@@ -27,6 +27,8 @@
     .hero {
       background: url('building-6528075.jpg') no-repeat center center;
       background-size: cover;
+      background-blend-mode: overlay;
+      background-color: #003b4d;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -41,7 +43,7 @@
       position: absolute;
       top: 0; left: 0;
       height: 100%; width: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 59, 77, 0.5);
       z-index: 1;
     }
 
@@ -55,12 +57,14 @@
       font-size: 3rem;
       margin-bottom: 20px;
       font-weight: 700;
+      animation: fadeInDown 1s ease-out;
     }
 
     p.tagline {
       font-size: 1.4rem;
       line-height: 1.6;
       margin-bottom: 40px;
+      animation: fadeInUp 1.2s ease-out;
     }
 
     .footer-note {
@@ -70,6 +74,7 @@
       color: #d0d0d0;
       min-height: 2em;
       margin-bottom: 20px;
+      animation: fadeIn 1.4s ease-out;
     }
 
     .about-text {
@@ -77,6 +82,13 @@
       font-size: 0.9rem;
       color: #d0d0d0;
       margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .about-text.visible {
+      display: block;
+      opacity: 1;
     }
 
     .about-button {
@@ -84,15 +96,33 @@
       padding: 12px 24px;
       font-size: 1rem;
       background-color: rgba(255, 255, 255, 0.15);
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 5px;
       color: white;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
+      animation: fadeIn 1.6s ease-out;
+      backdrop-filter: blur(4px);
     }
 
     .about-button:hover {
       background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -118,11 +148,13 @@
       const aboutText = document.querySelector('.about-text');
       const button = document.querySelector('.about-button');
       aboutText.style.display = 'block';
+      aboutText.classList.add('visible');
       button.style.display = 'none';
       setTimeout(() => {
+        aboutText.classList.remove('visible');
         aboutText.style.display = 'none';
         button.style.display = 'inline-block';
-      }, 5000);
+      }, 10000);
     }
   </script>
 </head>
@@ -143,3 +175,4 @@
   </section>
 </body>
 </html>
+
