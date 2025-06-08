@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>African Bank of Oman</title>
+  <title>African Bank of Oman – Test V1</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -11,11 +11,11 @@
       margin: 0;
       padding: 0;
       font-family: 'DM Sans', sans-serif;
-      color: #fff;
       background: #001F3F;
+      color: #fff;
     }
     .hero {
-      background: url('building-9181558.jpg') no-repeat center center;
+      background: url('54421939812_2f0c42272b_c.jpg') no-repeat center center;
       background-size: cover;
       min-height: 100vh;
       display: flex;
@@ -28,9 +28,8 @@
     .overlay {
       position: absolute;
       top: 0; left: 0;
-      height: 100%; width: 100%;
-      background: linear-gradient(180deg, rgba(5,28,56,0.22) 0%, rgba(24,38,67,0.14) 40%, rgba(10,25,46,0.12) 100%);
-      /* Filtro suave só para dar contraste ao texto */
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(10,20,40,0.55), rgba(10,20,40,0.15) 50%, rgba(10,20,40,0.4));
       z-index: 1;
       pointer-events: none;
     }
@@ -40,26 +39,23 @@
       max-width: 800px;
       margin-top: 8vh;
       margin-bottom: 18vh;
-      color: #16315a;
-      text-shadow: 0 2px 14px rgba(240,240,240,0.18);
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.45);
     }
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       font-weight: 700;
-      animation: fadeInDown 1s ease-out;
     }
     p.tagline {
       font-size: 1.4rem;
       line-height: 1.6;
       margin-bottom: 40px;
-      animation: fadeInUp 1.2s ease-out;
     }
     .bottom-content {
       position: fixed;
-      left: 0;
-      right: 0;
       bottom: 22px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -69,41 +65,13 @@
     .bottom-content > * {
       pointer-events: auto;
     }
-    .footer-note {
-      font-size: 0.98rem;
-      color: #14304c;
-      margin: 16px 0 6px 0;
-      letter-spacing: 0.03em;
-      text-shadow: 0 2px 12px rgba(255,255,255,0.11);
-    }
-    .about-text {
-      display: none;
-      font-size: 0.95rem;
-      color: #16315a;
-      margin-top: 15px;
-      background: none;
-      border-radius: 0;
-      padding: 0;
-      max-width: 520px;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      box-shadow: none;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-    }
-    .about-text.visible {
-      display: block;
-      opacity: 1;
-    }
     .about-button {
-      margin-top: 0;
       padding: 13px 32px;
       font-size: 1.05rem;
-      background-color: rgba(255,255,255,0.18);
+      background-color: rgba(255,255,255,0.14);
       border: none;
       border-radius: 6px;
-      color: #16315a;
+      color: #fff;
       cursor: pointer;
       transition: background 0.3s, transform 0.3s;
       backdrop-filter: blur(4px);
@@ -111,8 +79,30 @@
       font-weight: 600;
     }
     .about-button:hover {
-      background-color: rgba(255,255,255,0.36);
+      background-color: rgba(255,255,255,0.26);
       transform: scale(1.05);
+    }
+    .footer-note {
+      font-size: 0.98rem;
+      margin: 16px 0 6px 0;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .about-text {
+      display: none;
+      font-size: 0.95rem;
+      color: #fff;
+      margin-top: 15px;
+      max-width: 520px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    .about-text.visible {
+      display: block;
+      opacity: 1;
     }
     @media (max-width: 768px) {
       .hero-content {
@@ -162,8 +152,3 @@
   </section>
 </body>
 </html>
-
-
-
-
-
